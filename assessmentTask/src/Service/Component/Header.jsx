@@ -105,12 +105,7 @@ const Header = () => {
             Jajarkot-Rukum Earthquake Response 2023. Check them out{" "}
           </span>
           <span>
-            {isHovered && (
-              <ArrowRight
-                className="text-blue-500  "
-                size={20}
-              />
-            )}
+            {isHovered && <ArrowRight className="text-blue-500  " size={20} />}
           </span>
         </div>
         <div className="flex w-[100%] justify-around p-2">
@@ -138,9 +133,7 @@ const Header = () => {
             >
               {" "}
               Porfolio
-              {dropdownOpen.Porfolio && (
-                <DropDown items={Porfolio} />
-              )}
+              {dropdownOpen.Porfolio && <DropDown items={Porfolio} />}
             </span>
             <span
               className="relative"
@@ -148,11 +141,7 @@ const Header = () => {
               onMouseLeave={() => handleDropdownToggle("Company")}
             >
               Company
-              {dropdownOpen.Company && (
-                <DropDown
-                  items={company}
-                />
-              )}
+              {dropdownOpen.Company && <DropDown items={company} />}
             </span>
 
             <Link to={"/geoai"} className="block px-4 py-2 cursor-pointer">
@@ -165,9 +154,7 @@ const Header = () => {
             >
               {" "}
               Event & Media
-              {dropdownOpen.EventsMedia && (
-                <DropDown items={media} />
-              )}
+              {dropdownOpen.EventsMedia && <DropDown items={media} />}
             </span>
             <Link
               to={"/pages/blogs"}
@@ -176,19 +163,22 @@ const Header = () => {
               Blogs
             </Link>
           </div>
-          <div
+          <Link
+            to={"https://www.naxa.com.np/contact/iamabusiness"}
             className="bg-amber-300 pt-3   text-center flex justify-center cursor-pointer w-[150px] hover:bg-orange-500  "
             onMouseEnter={() => setIsHovered1(true)}
             onMouseLeave={() => setIsHovered1(false)}
           >
-            <span className="text-center">Let's talk</span>
-            {isHovered1 && (
-              <ArrowRight
-                className="text-blue-500  transition-opacity duration-350 opacity-100"
-                size={20}
-              />
-            )}
-          </div>
+            
+              <span className="text-center">Let's talk</span>
+              {isHovered1 && (
+                <ArrowRight
+                  className="text-blue-500  transition-opacity duration-350 opacity-100 pt-1"
+                  size={20}
+                />
+              )}
+          
+          </Link>
           <div className="md:hidden top-3 ">
             <button
               onClick={() => setIsOpen(true)}
